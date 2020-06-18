@@ -1,2 +1,0 @@
-import gym
-env = g
