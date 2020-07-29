@@ -2,7 +2,7 @@ import numpy as np
 live = bool
 state = torch.empty(N,N)
 
-def add_trajectory():
+def make_trajectory():
     trajectory = []
     step = (state, action)
 
