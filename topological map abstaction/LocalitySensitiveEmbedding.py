@@ -35,4 +35,5 @@ def L(d, d_expect):
 
 
 
-def LocSEFunc()
+def LocSEFunc():
+    

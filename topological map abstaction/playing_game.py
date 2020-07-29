@@ -1,14 +1,14 @@
 import numpy as np
 
 
-def add_trajectory()
+def add_trajectory():
 
 
 trajectory = []
 live = bool
 step = (state, action)
 
-while live
+while live:
 # 열심히 게임을 한다.
 trajectory.append(state)
 x = np.array(trajectory)
