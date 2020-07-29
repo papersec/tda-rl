@@ -7,9 +7,9 @@ from abstaction_map_to_V import *
 # Algorithm 1
 # 1: Pool P←∅. Vertex set V←∅. Edge set E←∅. Graph G(V, E).
 Pool = []
-Vertices = []
+Vertices = set([])
 Edges = set([])
-Landmarks = []
+Landmarks = set([])
 t = 1
 tradjectory_index = 0
 Prob_distrb_s = []
@@ -59,11 +59,3 @@ for i in range(len(Vertices)):
 # 9: end for
 
 
-# Algorithm 2
-# 1:fort= 1,2,...do
-# 2:Set a goalgusing some criterion.
-# 3:Sample a trajectory T under the guidance of intermediate goals.
-# 4:Update graph using T (Algorithm 1).
-# 5:Update vertex memory and HER using T.
-# 6:Train the policy π using experience drawn from vertex memory and HER.
-# 7:end for
