@@ -10,6 +10,6 @@ step = (state, action)
 
 while live
 # 열심히 게임을 한다.
-trajectory.append(step)
+trajectory.append(state)
 x = np.array(trajectory)
 return x
