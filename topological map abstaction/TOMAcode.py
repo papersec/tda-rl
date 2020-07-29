@@ -34,6 +34,8 @@ Vertices.append(Trajectorys[abs(randint())])
 # [We move some states from the candidate queue into the landmark set andupdateVaccordingly. Once a state is added to the landmark set, we will relabel it from NULL toits vertex identifier.]
 # [Let the labelled trajectory to be(vi0,vi1,...,vin). If we find vik and vik + 1 are different vertices in the existing graph, we will add an edge〈vik,vik+1〉into the graph]
 # 8: Check the graph using
+for i in range(0,len(Vertices))
+    for j in range
 # [Ifρ(φθ(li),φθ(lj))<1.5, then we will merge vi and vj .]
 # [For any edge〈vi,vj〉, ifρ(φθ(li),φθ(lj))>3, we will remove this edge.]
 # 9: end for
