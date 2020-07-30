@@ -30,3 +30,5 @@ def L3(x):
 
 def L(d, d_expect):
     return X1(d)*L1(d_expect) + LAMBDA1*X2(d)*L2(d_expect) + LAMBDA2*X3(d)*L3(d_expect)
+
+def embedding_func()
