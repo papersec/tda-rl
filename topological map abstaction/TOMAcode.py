@@ -21,8 +21,8 @@ def topological_map_abstraction(embedding_func, graph, pool, trajectory):
         pool.append(2D_array_index[i])
     # 5: Training the embedding function φθ using samples from P.
     opimizer.zero_grad()
-    d.append(torch.norm(actual_embedding(trajectory[2D_array_index[i][0]])-actual_embedding(trajectory[2D_array_index[i][1]])))
-    d_pred.append(torch.norm(embedding_func(trajectory[2D_array_index[i][0]])-embedding_func(trajectory[2D_array_index[i][1]])))
+    d.append(torch.norm(actual_embedding(pool[[i][0]])-actual_embedding(pool[[i][1]])))
+    d_pred.append(torch.norm(pool[[i][0]])-embedding_func(pool[[i][1]]))
     loss = torch.sum(L(d,d_pred))
     loss.backward()
     optimizer.step()
@@ -51,13 +51,19 @@ def topological_map_abstraction(embedding_func, graph, pool, trajectory):
         state.vertex = state
     # [Let the labelled trajectory to be(vi0,vi1,...,vin). If we find vik and vik + 1 are different vertices in the existing graph, we will add an edge〈vik,vik+1〉into the graph]
     for i in range(len(trajectory)):
-        if trajectory[i].vertex != Null and trajectory[i+1].vertex != Null:
+        if trajectory[i].vertex != Null and trajectory[i+1].vertex != Null and trajectory[i].vertex != trajectory[i+1].vertex:
             graph.add_edge(trajectory[i],trajectory[i+1])
             graph.edges[trajectory[i], trajectory[i+1]]['distance'] = torch.norm(embedding_func(trajectory[i]))-embedding_func(trajectory[i+1])
     # 8: Check the graph using
     for i in range(len(Vertices)):
         for j in range
     # [Ifρ(φθ(li),φθ(lj))<1.5, then we will merge vi and vj .]
+    for v1 in graph.vertices():
+        for v2 in graph.vertices():
+            if v2 == v1:
+                pass
+            else if torch.norm(embedding_func(v1)-embedding_func(v2))<1.5:
+                graph.remove_node(np.random([v1,v2],1,p=[0.1,0.5]))
     # [For any edge〈vi,vj〉, ifρ(φθ(li),φθ(lj))>3, we will remove this edge.]
     for x in graph.edges():
         if graph.edges[trajectory[i], trajectory[i+1]] > 3:
