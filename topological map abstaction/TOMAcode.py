@@ -13,7 +13,7 @@ def topological_map_abstraction(embedding_func, graph, pool, trajectory):
     Candidate_queue = set([])
     # 4: Sample state pairs from T using distribution Ps and put them to P.
     TwoD_array_index = np.transpose([np.tile(x, len(y)), np.repeat(y, len(x))])
-    prob = np.ones(len(trajectory), len(trajectory))/len(trajectory)**2
+    prob = np.ones(len(trajectory)**2)/len(trajectory)**2
     np.random.choice(TwoD_array_index, N, replace=True, p=prob)
     for i in range(N):
         pool.append(TwoD_array_index[i])
