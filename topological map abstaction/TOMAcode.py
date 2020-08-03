@@ -8,8 +8,7 @@ from playing_game import add_trajectory
 
 def topological_map_abstraction(embedding_func, graph, pool, trajectory):
     # Algorithm 1
-    Landmarks = set([])
-    tradjectory_index = 0
+
     #Prob_distrb_s = []
     Candidate_queue = set([])
     # 4: Sample state pairs from T using distribution Ps and put them to P.
