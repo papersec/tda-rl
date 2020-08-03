@@ -31,7 +31,7 @@ class QNetwork(nn.Module):
         )
 
         self.layer4 = nn.Sequential(
-            nn.Linear(in_features=256, out_channels=18, bias=True)
+            nn.Linear(in_features=256, out_features=18, bias=True)
         )
 
     def forward(self, x):
