@@ -1,0 +1,6 @@
+.vscode/*
+*.pyc
+*.npz
+*.pkl
+*.png
+*.pth
